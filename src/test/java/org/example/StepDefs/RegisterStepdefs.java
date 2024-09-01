@@ -1,22 +1,14 @@
 package org.example.StepDefs;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import org.example.pages.BaseDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class RegisterStepdefs {
-    @Given("I am on register page {string}")
-    public void tAmOnRegisterPage(String word) {
-        System.out.println(word);
-    }
-
-    @When("I enter my valid data")
-    public void iEnterMyValidData() {
-        System.out.println("two");
-    }
-
-    @Then("I registered successfully")
-    public void iRegisteredSuccessfully() {
-        System.out.println("three");
+    @Given("user go to register page")
+    public void userGoToRegisterPage() {
+        WebElement registerBtn = BaseDriver.driver.findElement(By.cssSelector("a[href=\"/register?returnUrl=%2F\"]"));
+        registerBtn.click();
     }
 }

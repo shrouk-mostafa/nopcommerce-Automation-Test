@@ -1,5 +1,4 @@
-Feature: Register Function Test
-  Scenario: Verify the registration with valid crediential
-    Given I am on register page "Shrouk"
-    When I enter my valid data
-    Then I registered successfully
+@smoke
+Feature: F01_Register | users could register with new accounts
+  Scenario: guest user could register with valid data successfully
+    Given user go to register page

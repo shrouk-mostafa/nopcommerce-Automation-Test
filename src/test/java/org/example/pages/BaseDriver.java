@@ -1,27 +1,22 @@
 package org.example.pages;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-
-import java.time.Duration;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseDriver {
-    public WebDriver driver;
-@BeforeClass
-    public void SetUp() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.get("https://www.techlistic.com/p/selenium-practice-form.html?m=1");
+    public static WebDriver driver;
+    @Before public static void OpenBrowser() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.get("https://demo.nopcommerce.com/");
     }
 
-    public void closeDriver() {
-        if (driver != null) {
-            driver.quit();
-        }
+    @After
+    public static void quitDriver() throws InterruptedException {
+        Thread.sleep(3000); driver.quit();
     }
 }
+
