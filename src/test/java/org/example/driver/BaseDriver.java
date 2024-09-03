@@ -25,7 +25,7 @@ public class BaseDriver {
             }
         });
 
-        driver.get("https://demo.nopcommerce.com/register");
+        driver.get("https://demo.nopcommerce.com");
     }
 
     public static WebDriver getDriver() {

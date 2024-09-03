@@ -1,19 +1,11 @@
 package org.example.pages;
 
 import org.example.driver.BaseDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class P01_RegisterActions {
 
     P01_RegisterLocators locators = new P01_RegisterLocators();
-    WebDriver driver = BaseDriver.getDriver();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     public void clickRegisterLink() {
         BaseDriver.getDriver().findElement(locators.registerLink).click();
@@ -59,14 +51,5 @@ public class P01_RegisterActions {
 
     public String getSuccessMessageColor() {
         return BaseDriver.getDriver().findElement(locators.successMessage).getCssValue("color");
-    }
-
-    public void clickContinueButton() {
-        // Assuming there's a "Continue" button to go to the homepage
-        By continueButton = By.cssSelector("input.button-1.register-continue-button");
-        driver.findElement(continueButton).click();
-
-        // Wait until we're redirected to the homepage
-        wait.until(ExpectedConditions.urlToBe("https://demo.nopcommerce.com/register"));
     }
 }
