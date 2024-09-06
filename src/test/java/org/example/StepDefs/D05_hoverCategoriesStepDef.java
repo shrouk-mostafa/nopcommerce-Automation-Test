@@ -3,18 +3,19 @@ package org.example.StepDefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.driver.BaseDriver;
 import org.example.pages.P05_HoverActions;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class D05_hoverCategoriesStepDef {
+    WebDriver driver = Hooks.driver;
 
-    P05_HoverActions hoverActions = new P05_HoverActions(BaseDriver.getDriver());
+    P05_HoverActions hoverActions = new P05_HoverActions(driver);
     String selectedSubCategory;
 
     @Given("user is on the home page")
     public void userIsOnHomePage() {
-        Assert.assertTrue(BaseDriver.getDriver().getTitle().contains("nopCommerce"), "User is not on the home page");
+        Assert.assertTrue(driver.getTitle().contains("nopCommerce"), "User is not on the home page");
     }
 
     @When("user hovers over a random main category")

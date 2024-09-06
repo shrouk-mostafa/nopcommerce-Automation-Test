@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import org.example.StepDefs.Hooks;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,12 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class P08_WishlistActions {
-    WebDriver driver;
+    WebDriver driver = Hooks.driver;
     P08_WishlistLocators wishlistLocators = new P08_WishlistLocators();
     WebDriverWait wait;
 
     public P08_WishlistActions(WebDriver driver) {
-        this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 

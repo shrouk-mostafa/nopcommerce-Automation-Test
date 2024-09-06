@@ -6,12 +6,12 @@ import io.cucumber.java.en.When;
 import org.example.pages.P06_SliderActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.example.driver.BaseDriver;
+
 
 public class D06_homeSlidersStepDef {
 
     P06_SliderActions homePageActions = new P06_SliderActions();
-    WebDriver driver = BaseDriver.getDriver();
+    WebDriver driver = Hooks.driver;
 
     @Given("user is on the home page")
     public void userIsOnHomePage() {

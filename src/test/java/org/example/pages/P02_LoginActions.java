@@ -1,41 +1,43 @@
 package org.example.pages;
 
-import org.example.driver.BaseDriver;
+import org.example.StepDefs.Hooks;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 
 
 public class P02_LoginActions {
 
+    WebDriver driver = Hooks.driver;
     P02_LoginLocators locators = new P02_LoginLocators();
 
     public void goToLoginPage() {
-        BaseDriver.getDriver().findElement(locators.loginLink).click();
+        driver.findElement(locators.loginLink).click();
     }
 
     public void loginUser(String username, String password) {
-        BaseDriver.getDriver().findElement(locators.emailField).sendKeys(username);
-        BaseDriver.getDriver().findElement(locators.passwordField).sendKeys(password);
+        driver.findElement(locators.emailField).sendKeys(username);
+        driver.findElement(locators.passwordField).sendKeys(password);
     }
 
     public void pressLoginButton() {
-        BaseDriver.getDriver().findElement(locators.loginButton).click();
+        driver.findElement(locators.loginButton).click();
     }
 
     public boolean isMyAccountDisplayed() {
-        return BaseDriver.getDriver().findElement(locators.myAccountTab).isDisplayed();
+        return driver.findElement(locators.myAccountTab).isDisplayed();
     }
 
     public String getCurrentUrl() {
-        return BaseDriver.getDriver().getCurrentUrl();
+        return driver.getCurrentUrl();
     }
 
     public String getLoginErrorMessage() {
-        return BaseDriver.getDriver().findElement(locators.loginErrorMessage).getText();
+        return driver.findElement(locators.loginErrorMessage).getText();
     }
 
     public String getLoginErrorMessageColor() {
-        WebElement errorMessage = BaseDriver.getDriver().findElement(locators.loginErrorMessage);
+        WebElement errorMessage = driver.findElement(locators.loginErrorMessage);
         return Color.fromString(errorMessage.getCssValue("color")).asHex();
     }
 }

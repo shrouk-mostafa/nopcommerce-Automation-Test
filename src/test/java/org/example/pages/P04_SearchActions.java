@@ -1,6 +1,6 @@
 package org.example.pages;
 
-import org.example.driver.BaseDriver;
+import org.example.StepDefs.Hooks;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class P04_SearchActions {
 
-    public WebDriver driver = BaseDriver.getDriver();
+    public WebDriver driver = Hooks.driver;
 
     // Method to search for a product
     public void searchForProduct(String productName) {

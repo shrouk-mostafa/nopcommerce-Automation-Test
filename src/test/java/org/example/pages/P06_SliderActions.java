@@ -1,10 +1,10 @@
 package org.example.pages;
 
+import org.example.StepDefs.Hooks;
 import org.openqa.selenium.WebDriver;
-import org.example.driver.BaseDriver;
 
 public class P06_SliderActions {
-    WebDriver driver = BaseDriver.getDriver();
+    WebDriver driver = Hooks.driver;
     P06_SliderLocators locators = new P06_SliderLocators();
 
     // Action to click on the first slider

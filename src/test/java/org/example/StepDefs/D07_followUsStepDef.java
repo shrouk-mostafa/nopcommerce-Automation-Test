@@ -3,7 +3,6 @@ package org.example.StepDefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.driver.BaseDriver;
 import org.example.pages.P07_FollowUsActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -13,7 +12,7 @@ import java.util.Set;
 
 public class D07_followUsStepDef {
 
-    WebDriver driver = BaseDriver.getDriver();
+    WebDriver driver = Hooks.driver;
     P07_FollowUsActions followUsActions = new P07_FollowUsActions(); // Initialize actions
 
     String mainTab; // Store the main window handle

@@ -3,7 +3,7 @@ package org.example.StepDefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.driver.BaseDriver;
+
 import org.example.pages.P08_WishlistActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 public class D08_WishlistStepDef {
 
-    WebDriver driver = BaseDriver.getDriver();
+    WebDriver driver = Hooks.driver;
     P08_WishlistActions wishlistActions = new P08_WishlistActions(driver);
     SoftAssert softAssert = new SoftAssert();
 
