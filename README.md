@@ -2,40 +2,57 @@
 
 ## Overview
 
-This project is an automated testing framework built using **Selenium WebDriver**, **Maven**, **Cucumber**, and **Java**. The framework is designed to run end-to-end tests, integrating seamlessly with CI/CD pipelines to ensure the quality and reliability of web applications.
+The project involves automating and generating a detailed report for a test plan designed to cover all possible test scenarios for an e-commerce application. The goal is to automate testing of the application's major functionalities and ensure comprehensive coverage of test cases. The e-commerce platform includes a login page with a username and password, requiring no additional authentication beyond email and password. All key features of the application will be tested to ensure functionality.
+
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
+- [Requirements](#Requirements)
 - [Project Structure](#project-structure)
+- [Scenarios covered](Scenarios-covered)
 - [Setup and Installation](#setup-and-installation)
 - [Running the Tests](#running-the-tests)
-- [Configuration](#configuration)
 - [Reporting](#reporting)
 - [Contributing](#contributing)
-- [License](#license)
 
-## Prerequisites
+
+## Requirements
 
 Before setting up the project, ensure that you have the following installed on your machine:
 
 - **Java JDK 8 or higher**: [Download here](https://www.oracle.com/java/technologies/javase-downloads.html)
 - **Apache Maven 3.6.0 or higher**: [Download here](https://maven.apache.org/download.cgi)
-- **Google Chrome** (latest version) for running tests in Chrome browser
+- **Google Chrome** (latest version) for running tests in the Chrome browser
 - **IntelliJ IDEA** or **Eclipse IDE** (Optional but recommended)
+- **Selenium WebDriver**
+- **TestNG**
+- **cucumber**.
 
 ## Project Structure
 
 The project follows a standard Maven structure:
 
-├── src │ ├── main │ │ └── java │ ├── test │ │ ├── java │ │ │ └── stepDefinitions │ │ │ └── runners │ │ │ └── utils │ │ └── resources │ │ └── features │ │ └── configs ├── pom.xml ├── README.md └── testng.xml
-
-
-- **src/main/java**: Contains the core Java code (if any, like utilities).
-- **src/test/java**: Contains test step definitions, runners, and utility classes.
+- **src/test/java**: Contains test step definitions, runners, and page classes.
 - **src/test/resources**: Contains Cucumber feature files and configuration files.
 - **pom.xml**: The Maven Project Object Model file for managing dependencies and plugins.
 - **testng.xml**: TestNG suite configuration (optional, if using TestNG with Cucumber).
+
+ ## Scenarios covered
+- Guest users could register with valid data successfully
+- The user could log in with valid email and password
+- The user could log in with an invalid email and password
+- User can select Euro currency and verify product prices displaying the Euro symbol
+- User could search using product name
+- Users could search for products using SKU
+- User hovers over a main category and selects a sub-category
+- The First slider is clickable on the home page
+- The Second slider is clickable on the home page
+- The User opens the Facebook link
+- The User opens the Twitter link
+- The User opens the RSS link
+- The User opens the YouTube link
+- Add HTC One M8 Android L 5.0 Lollipop to wishlist
+- Verify quantity in the wishlist
 
 ## Setup and Installation
 
@@ -58,27 +75,14 @@ Using Maven
 To run the tests, execute the following command in the terminal:
 mvn test
 
-### Using TestNG (optional)
-If you have a testng.xml file for more granular control over test execution:
-mvn test -DsuiteXmlFile=testng.xml
-
 ### Using Cucumber
 You can also run specific Cucumber scenarios directly from the IDE using the CucumberTestRunner class or by specifying tags:
 mvn test -Dcucumber.options="--tags @YourTag"
 
-### Configuration
-Browser and Environment Configuration
-Browser: By default, the tests run on Chrome. To run tests on a different browser, modify the config.properties file located in src/test/resources/configs.
-Environment: You can specify different environments (e.g., dev, staging, production) in the config.properties file.
-Example config.properties:
-browser=chrome
-baseUrl=https://example.com
-timeout=30
-
 ### Reporting
 The framework is configured to generate Cucumber reports. After running the tests, the reports will be available in the target/cucumber-reports directory.
 
-To view the report, open the index.html file located in the target/cucumber-reports directory in your web browser.
+To view the report, open the cucumber-html-reports file located in the target/cucumber-reports directory in your web browser.
 
 ### Contributing
 Contributions are welcome! Please follow the standard Git workflow:
@@ -89,19 +93,16 @@ Commit your changes (git commit -m 'Add some feature').
 Push to the branch (git push origin feature/your-feature-name).
 Open a pull request.
 
-### License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ### Explanation:
 
 - **Overview**: A brief description of the project and its purpose.
-- **Prerequisites**: Lists the necessary software to be installed before setting up the project.
+- **Requirements**: Lists the necessary software to be installed before setting up the project.
 - **Project Structure**: Describes the layout of the project directory.
-- **Setup and Installation**: Instructions on how to clone the repository, import the project into an IDE, and install dependencies.
+- **Scenarios covered**: Describe all the Scenarios covered in this project.
+- **Setup and Installation**: Instructions on how to clone the repository, import the project into an IDE and install dependencies.
 - **Running the Tests**: Different ways to run the tests using Maven, TestNG, and Cucumber.
-- **Configuration**: Instructions on how to configure the browser and environment settings.
 - **Reporting**: Details on where to find test reports and how to view them.
 - **Contributing**: Guidelines for contributing to the project.
-- **License**: License information for the project.
 
 This `README.md` provides a comprehensive guide for anyone who wants to set up, run, and contribute to the automation project.
