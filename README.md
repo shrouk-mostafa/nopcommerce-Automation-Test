@@ -1,4 +1,4 @@
-# Automation Testing Project
+# nopcommerce Automation Test
 
 ## Overview
 
