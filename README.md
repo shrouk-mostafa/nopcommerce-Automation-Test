@@ -70,7 +70,7 @@ Import the project as a Maven project.
 Maven will automatically install all required dependencies specified in the pom.xml file.
 mvn clean install
 
-### Running the Tests
+## Running the Tests
 Using Maven
 To run the tests, execute the following command in the terminal:
 mvn test
@@ -79,12 +79,12 @@ mvn test
 You can also run specific Cucumber scenarios directly from the IDE using the CucumberTestRunner class or by specifying tags:
 mvn test -Dcucumber.options="--tags @YourTag"
 
-### Reporting
-The framework is configured to generate Cucumber reports. After running the tests, the reports will be available in the target/cucumber-reports directory.
+## Reporting
+The framework is configured to generate Cucumber reports. After running the tests, the reports will be available in the target/cucumber-html-reports directory.
 
-To view the report, open the cucumber-html-reports file located in the target/cucumber-reports directory in your web browser.
+To view the report, open the overview-features.html file located in the target/cucumber-html-reports directory in your web browser.
 
-### Contributing
+## Contributing
 Contributions are welcome! Please follow the standard Git workflow:
 
 Fork the repository.
