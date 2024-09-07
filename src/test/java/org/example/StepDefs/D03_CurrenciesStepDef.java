@@ -13,9 +13,8 @@ public class D03_CurrenciesStepDef {
 
     P03_HomePageActions homePageActions = new P03_HomePageActions();
 
-    @Given("user is on the home page")
+    @Given("user is on the home page for currencies")
     public void userIsOnHomePage() {
-        // Assuming the base URL is already set in BaseDriver
         Assert.assertTrue(homePageActions.isOnHomePage(), "User is not on the home page");
     }
 

@@ -2,7 +2,7 @@
 Feature: F04_Search | Verify search functionality on homepage
 
   Scenario Outline: user could search using product name
-    Given user is on the home page
+    Given user on the home page for search
     When user searches for product "<product>"
     Then the URL should contain "https://demo.nopcommerce.com/search?q="
     And search results should be relevant

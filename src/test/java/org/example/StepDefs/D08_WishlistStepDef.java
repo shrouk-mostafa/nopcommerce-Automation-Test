@@ -15,7 +15,7 @@ public class D08_WishlistStepDef {
     P08_WishlistActions wishlistActions = new P08_WishlistActions(driver);
     SoftAssert softAssert = new SoftAssert();
 
-    @Given("user is on home page")
+    @Given("user is on home page for wishlist")
     public void userIsOnHomePage() {
         driver.get("https://demo.nopcommerce.com/");
     }

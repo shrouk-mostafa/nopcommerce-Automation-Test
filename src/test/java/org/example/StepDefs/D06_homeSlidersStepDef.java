@@ -13,7 +13,7 @@ public class D06_homeSlidersStepDef {
     P06_SliderActions homePageActions = new P06_SliderActions();
     WebDriver driver = Hooks.driver;
 
-    @Given("user is on the home page")
+    @Given("user is on the home page for homeslider")
     public void userIsOnHomePage() {
         driver.get("https://demo.nopcommerce.com/");
         Assert.assertTrue(driver.getTitle().contains("nopCommerce"), "User is not on the home page");

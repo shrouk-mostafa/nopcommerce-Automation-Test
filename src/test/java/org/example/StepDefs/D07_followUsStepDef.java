@@ -17,7 +17,7 @@ public class D07_followUsStepDef {
 
     String mainTab; // Store the main window handle
 
-    @Given("user is on home page")
+    @Given("user is on home page for followus")
     public void userIsOnHomePage() {
         driver.get("https://demo.nopcommerce.com/");
     }

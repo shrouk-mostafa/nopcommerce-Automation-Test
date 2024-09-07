@@ -16,8 +16,8 @@ public class D04_SearchStepDef {
     P04_SearchActions SearchActions = new P04_SearchActions();
     SoftAssert softAssert = new SoftAssert();
 
-    @Given("user is on the home page")
-    public void userIsOnHomePage() {
+    @Given("user on the home page for search")
+    public void userOnHomePage() {
         Assert.assertTrue(SearchActions.driver.getTitle().contains("nopCommerce"), "User is not on the home page");
     }
 

@@ -13,7 +13,7 @@ public class D05_hoverCategoriesStepDef {
     P05_HoverActions hoverActions = new P05_HoverActions(driver);
     String selectedSubCategory;
 
-    @Given("user is on the home page")
+    @Given("user is on the home page for hover")
     public void userIsOnHomePage() {
         Assert.assertTrue(driver.getTitle().contains("nopCommerce"), "User is not on the home page");
     }
