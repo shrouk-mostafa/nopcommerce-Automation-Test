@@ -14,7 +14,7 @@ Feature: F04_Search | Verify search functionality on homepage
       | nike     |
 
   Scenario Outline: user could search for product using sku
-    Given user is on the home page
+    Given user on the home page for search
     When user searches for product using sku "<sku>"
     Then the product page should display the correct sku
 
